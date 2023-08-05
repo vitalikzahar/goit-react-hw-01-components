@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Tabl,
   Head,
@@ -9,6 +10,7 @@ import {
 } from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ lists }) => {
+  console.log(lists);
   return (
     <Tabl>
       <Head>
@@ -30,4 +32,14 @@ export const TransactionHistory = ({ lists }) => {
       </Bodytable>
     </Tabl>
   );
+};
+TransactionHistory.propTypes = {
+  lists: PropTypes.objectOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    })
+  ),
 };

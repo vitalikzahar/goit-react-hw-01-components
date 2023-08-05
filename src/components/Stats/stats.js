@@ -21,7 +21,11 @@ export const Stats = ({ items }) => {
 };
 
 Stats.propTypes = {
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+  items: PropTypes.objectOf(
+    PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    })
+  ),
 };
